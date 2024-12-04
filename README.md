@@ -74,7 +74,7 @@
 
     /* Hero Section */
     .hero {
-      background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+      background: linear-gradient(90deg, #007bff, #0056b3);
       padding: 100px 20px;
       text-align: center;
       color: white;
