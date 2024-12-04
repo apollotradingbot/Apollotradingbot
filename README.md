@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +6,17 @@
   <title>Apollo Trading Bot</title>
   <style>
     /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
       line-height: 1.6;
+      background-color: #f9f9f9;
     }
 
     a {
@@ -21,62 +24,81 @@
       color: inherit;
     }
 
+    button, a.button {
+      padding: 10px 20px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+      display: inline-block;
+    }
+
+    button:hover, a.button:hover {
+      background-color: #0056b3;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
     /* Navbar */
     .navbar {
       background-color: #000;
-      color: #fff;
+      color: white;
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .navbar a {
-      color: #fff;
+    .navbar h1 {
+      font-size: 1.5rem;
+    }
+
+    .navbar nav a {
       margin-left: 15px;
+      color: white;
       font-weight: bold;
     }
 
-    .navbar a:hover {
+    .navbar nav a:hover {
       text-decoration: underline;
     }
 
     /* Hero Section */
     .hero {
       background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+      padding: 100px 20px;
       text-align: center;
       color: white;
-      padding: 100px 20px;
     }
 
     .hero h1 {
       font-size: 3rem;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .hero .btn {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .hero .btn:hover {
-      background-color: #0056b3;
+    .hero .cta-buttons a {
+      margin: 5px;
     }
 
     /* About Section */
     .about {
+      background-color: #fff;
       padding: 50px 20px;
-      background-color: #f4f4f4;
+      text-align: center;
     }
 
     .about h2 {
@@ -87,53 +109,63 @@
     .about ul {
       list-style: none;
       padding: 0;
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
     }
 
     .about ul li {
-      margin-bottom: 10px;
       font-size: 1.1rem;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
     }
 
-    /* Features Section */
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .features img {
-      width: 150px;
-      margin: 10px;
-    }
-
-    .features p {
-      margin-top: 10px;
-      font-size: 1rem;
+    .about ul li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      color: #007bff;
     }
 
     /* Video Section */
     .video {
       padding: 50px 20px;
+      background-color: #f4f4f4;
       text-align: center;
     }
 
     .video iframe {
       max-width: 100%;
       border: none;
+      margin-top: 20px;
     }
 
     /* Footer */
     footer {
       background-color: #000;
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 20px 0;
     }
 
     footer a {
       color: #0dcaf0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .about ul {
+        padding: 0 20px;
+      }
     }
   </style>
 </head>
@@ -142,53 +174,33 @@
   <header class="navbar">
     <h1>Apollo Trading Bot</h1>
     <nav>
-      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="https://apollobots.io/?id=TCSERJ" target="_blank" class="btn">Sign Up</a>
-      <a href="https://apollobots.io/login" target="_blank" class="btn">Login</a>
+      <a href="https://apollobots.io/?id=TCSERJ" target="_blank">Sign Up</a>
+      <a href="https://apollobots.io/login" target="_blank">Login</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
+  <section class="hero">
     <h1>Welcome to Apollo Trading Bot</h1>
-    <p>Automate your trading and maximize your profits effortlessly.</p>
-    <button class="btn" onclick="window.location.href='#about'">Learn More</button>
+    <p>Automate your trading and maximize your profits effortlessly with Apollo.</p>
+    <div class="cta-buttons">
+      <a href="https://apollobots.io/?id=TCSERJ" target="_blank" class="button">Sign Up Now</a>
+      <a href="#about" class="button">Learn More</a>
+    </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="about">
     <h2>About Apollo Trading Bot</h2>
-    <p>Discover the Power of Automated Profit with Apollo Trading Bot!</p>
+    <p>Discover the power of automated profit with Apollo Trading Bot!</p>
     <ul>
-      <li>✅ Smart Automation: Save time with intelligent trading strategies tailored to market conditions.</li>
-      <li>✅ 24/7 Performance: Never miss an opportunity with round-the-clock trading.</li>
-      <li>✅ User-Friendly Interface: Easy to use, even for beginners.</li>
-      <li>✅ Maximized Profits: Optimize every trade with precision analytics.</li>
+      <li>Smart Automation: Save time with intelligent trading strategies tailored to market conditions.</li>
+      <li>24/7 Performance: Never miss an opportunity with round-the-clock trading.</li>
+      <li>User-Friendly Interface: Easy to use, even for beginners.</li>
+      <li>Maximized Profits: Optimize every trade with precision analytics.</li>
     </ul>
-    <p>
-      Turn your trading goals into reality with Apollo Trading Bot! Start today and watch your investments grow effortlessly.
-    </p>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features">
-    <div>
-      <img src="https://via.placeholder.com/150" alt="Feature 1">
-      <p>Smart Automation</p>
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150" alt="Feature 2">
-      <p>24/7 Performance</p>
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150" alt="Feature 3">
-      <p>User-Friendly Interface</p>
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/150" alt="Feature 4">
-      <p>Maximized Profits</p>
-    </div>
+    <p>Turn your trading goals into reality with Apollo Trading Bot. Start today and watch your investments grow effortlessly.</p>
   </section>
 
   <!-- Video Section -->
@@ -205,9 +217,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>For support, <a href="https://wa.link/asy4t2" target="_blank">contact customer care</a>.</p>
+    <p>Need help? <a href="https://wa.link/asy4t2" target="_blank">Contact Customer Care</a>.</p>
     <p>&copy; 2024 Apollo Trading Bot. All rights reserved.</p>
   </footer>
 </body>
 </html>
-
